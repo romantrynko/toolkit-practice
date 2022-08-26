@@ -10,7 +10,7 @@ const Form = () => {
       />
       <button
         type="submit"
-        className="shrink-0 bg-lime-300  hover:bg-lime-400 transition-all px-3 text-sm"
+        className="shrink-0 bg-slate-400  hover:bg-lime-400 transition-all px-3 text-sm"
       >
         Submit
       </button>

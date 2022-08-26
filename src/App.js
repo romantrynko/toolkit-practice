@@ -6,7 +6,7 @@ import Posts from './components/Posts';
 
 function App() {
   return (
-    <div className="min-h-screen h-full w-screen bg-indigo-400">
+    <div className="min-h-screen h-full w-screen bg-slate-800">
       <div className="container mx-auto px-4">
         <header className="flex gap-20 ">
           <div className="w-1/3">

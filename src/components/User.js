@@ -4,7 +4,7 @@ import LastName from './LastName';
 
 const User = () => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col text-slate-400">
       <input
         type="text"
         placeholder="First Name"
