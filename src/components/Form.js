@@ -15,6 +15,7 @@ const Form = () => {
     };
 
     dispatch(addTodo(todo));
+    setTodoValue('');
   };
 
   return (
@@ -23,6 +24,7 @@ const Form = () => {
       addTodoHandler();
     }}>
       <input
+        value={todoValue}
         type="text"
         placeholder="Type something..."
         onChange={(e) => setTodoValue(e.target.value)}

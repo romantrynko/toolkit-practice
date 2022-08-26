@@ -1,6 +1,6 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { toggleCompleted } from '../features/todo/todoSlice';
+import { useDispatch } from 'react-redux';
+import { deleteTodo, toggleCompleted } from '../features/todo/todoSlice';
 
 const TodoItem = ({ todo }) => {
   const { id, text, completed } = todo;
@@ -8,6 +8,10 @@ const TodoItem = ({ todo }) => {
 
   const toggleTodoHandler = (id) => {
     dispatch(toggleCompleted(id));
+  };
+
+  const deleteHandler = (id) => {
+    dispatch(deleteTodo(id));
   };
 
   return (
@@ -25,7 +29,10 @@ const TodoItem = ({ todo }) => {
       >
         {text}
       </div>
-      <div className="text-sm px-4 py-2 flex bg-red-400 hover:bg-red-500 transition-all text-white cursor-pointer">
+      <div
+        onClick={() => deleteHandler(id)}
+        className="text-sm px-4 py-2 flex bg-red-400 hover:bg-red-500 transition-all text-white cursor-pointer"
+      >
         Delete
       </div>
     </div>
