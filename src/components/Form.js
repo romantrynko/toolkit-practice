@@ -1,11 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addTodo } from '../features/todo/todoSlice';
+import { v4 } from 'uuid';
 
 const Form = () => {
+  const dispatch = useDispatch();
+  const [todoValue, setTodoValue] = useState('');
+
+  const addTodoHandler = () => {
+    const todo = {
+      id: v4(),
+      text: todoValue,
+      completed: false
+    };
+
+    dispatch(addTodo(todo));
+  };
+
   return (
-    <form className="w-full flex" onSubmit={(e) => e.preventDefault()}>
+    <form className="w-full flex" onSubmit={(e) => {
+      e.preventDefault();
+      addTodoHandler();
+    }}>
       <input
         type="text"
         placeholder="Type something..."
+        onChange={(e) => setTodoValue(e.target.value)}
         className="w-full p-1 focus:outline-none focus:border-lime-500 focus: border-2 placeholder:text-sm"
       />
       <button
